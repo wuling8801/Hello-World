@@ -1,12 +1,9 @@
-@app.route('/header/')
-def heade():
-    headers = request.headers
-    response = ''
-    #headsers 是一个字典
-    for k,v in headers.items():
-        response += '%s : %s<br/>' % (k,v)
-    return response
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8888)
-
